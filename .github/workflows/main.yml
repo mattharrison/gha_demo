@@ -21,7 +21,8 @@ jobs:
         uses: astral-sh/setup-uv@v2
         with:
           enable-cache: true
-          cache-dependency-glob: "uv.lock"          
+          cache-dependency-glob: "uv.lock"  
+          cache-local-path: "cache"
       - name: Setup Python ${{ matrix.python-version }}
         run: uv python install ${{ matrix.python-version }}
       - name: Install the project
